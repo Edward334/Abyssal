@@ -268,13 +268,13 @@
     </div>
 
     <script>
-        let encryptedKeysData; // 声明变量，用于存储从 JSON 文件加载的密钥
+        let encryptedKeysData; 
 
-        fetch('keys.json') // 加载 keys.json 文件
-            .then(response => response.json()) // 将响应解析为 JSON
+        fetch('221878937847218927381798493748.json') 
+            .then(response => response.json()) 
             .then(data => {
-                encryptedKeysData = data.imageKeys; // 将解析后的 JSON 数据赋值给 encryptedKeysData
-                init(); // 在密钥加载完成后，再初始化页面逻辑
+                encryptedKeysData = data.imageKeys; 
+                init(); 
             })
             .catch(error => console.error('加载 keys.json 出错:', error)); // 错误处理
 
