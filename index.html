@@ -1,111 +1,355 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abyssal Puzzle 2 - 音游解谜挑战</title>
+    <title>我的网页</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #1e1e2f;
-            color: #ffffff;
-            padding: 20px;
-            line-height: 1.6;
+            background-color: black;
+            background-size: contain;
+            background-repeat: no-repeat;
         }
-        h1 {
-            color: #ff6f61;
-            text-align: center;
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+            padding: 50px;
         }
-        h2 {
-            color: #61dafb;
+        .left-group {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
         }
-        .puzzle {
-            background-color: #2e2e4f;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 20px;
+        .right-group {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
         }
-        .puzzle p {
-            margin: 0;
+        .image-wrapper {
+            position: relative;
+            display: inline-block;
+            z-index: 1;
         }
-        .clue {
-            color: #ffcc00;
-            font-weight: bold;
+        .middle-image, .side-image {
+            width: 150px;
+            height: 150px;
+            cursor: pointer;
+            transition: filter 0.3s ease;
         }
-        .final-answer {
-            background-color: #4caf50;
+        .grayscale {
+            filter: grayscale(100%) opacity(0.5);
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 2;
+            visibility: hidden;
             padding: 10px;
-            border-radius: 5px;
+            font-size: 14px;
+            line-height: 1.4;
             text-align: center;
-            margin-top: 20px;
+            overflow: auto;
         }
-        .final-answer p {
-            margin: 0;
-            font-size: 1.2em;
-            font-weight: bold;
+
+        .overlay p{
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .overlay h6{
+            font-size: 12px;
+            line-height: 1.4;
+        }
+        .unlocked {
+            filter: blur(0px);
+            cursor: default;
+        }
+        .unlocked .overlay {
+            display: none;
+        }
+        .image-wrapper.active .overlay {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
         }
     </style>
 </head>
 <body>
-    <h1>Abyssal Puzzle 2 - 音游解谜挑战</h1>
-    <p></p>
-    <!-- 谜题1：雨中的旋律 -->
-    <div class="puzzle">
-        <h2>谜题1：雨中的旋律</h2>
-        <p>雨越下越大，雨中的旋律也愈发清晰。雨滴的数量是7，雨声的频率是440Hz，旋律的节奏是4/4拍。</p>
-        <p class="clue">线索：雨滴数量、频率、节奏。</p>
+
+    <div class="container">
+        <div class="image-wrapper" id="image1">
+            <img src="img/L1.png" alt="图片1" class="middle-image grayscale" onclick="toggleOverlay('image1')">
+            <div class="overlay">
+                <p>镌刻法则:
+                    •像素塔不断崩溃,两人手牵手走向最终的结局.
+                </p>
+                <p>(1)
+                    "neumac hignu"
+                    情杀，枪杀，早夭
+                    看那粉色宝石在月下闪烁着光芒。
+                    你是谁？
+                </p>
+                <p>
+                    (2)
+                    找到她所在的位置,向下走一层,进入那一层所代表的章节,寻找前往上方其他章节的隐藏入口,入口的那段旋律便为答案.
+                </p>
+                <h6>注：如果有单词的话首字母请大写</h6>
+                <input type="text" placeholder="输入密钥" id="password-image1">
+                <button onclick="unlockImage('image1')">解锁</button>
+            </div>
+        </div>
+
+        <div class="left-group">
+            <div class="image-wrapper" id="image3">
+                <img src="img/L3.png" alt="图片3" class="side-image grayscale" onclick="toggleOverlay('image3')">
+                <div class="overlay">
+                    <p>镌刻法则:
+                        •倾盆大雨落下,淋到雨的人们再也没有醒来.雨丝串联起来的不只是事物,更是情感.
+                    </p>
+                    <p>(1)
+                        水波般荡漾,年轮般稠密.用雨丝将线索连起,便可找到答案.
+                        •👁🌧💃👍🖱
+                        •🔎💀🖱👍✳️
+                        •👁🌧💃
+                    </p>
+                    <p>(2)
+                        Inverted World.
+                    </p>
+                    <h6>注：若有字母请大写</h6>
+                    <input type="text" placeholder="输入密钥" id="password-image3">
+                    <button onclick="unlockImage('image3')">解锁</button>
+                </div>
+            </div>
+            <div class="image-wrapper" id="image2">
+                <img src="img/L2.jpeg" alt="图片2" class="side-image grayscale" onclick="toggleOverlay('image2')">
+                <div class="overlay">
+                    <p>镌刻法则:
+                        一切的开端,是如此悄无声息
+                        音轨跃动,旋律交织.缤纷音乐之旅即将启程.
+                    </p>
+                    <p>(1)
+                        •寻找到故事启程时最初的旋律,它并未枯萎,只是转化为了缩写,变成了一把钥匙.
+                        •(锁),天穹水蓝犹如静海,(乱码),像素塔历242年的尾声,一切都好似梦境.
+                        •镌刻法则暂时破碎,用那把钥匙在另一个时空打开那把锁.
+                        你便能寻找到对应的那个旋律.
+                    </p>
+                    <p>(2)
+                        •镌刻法则彻底破碎,前往另一侧的时空,找到星白去过的的另一处对应地,向右移动直至寻找到阿古亚星灾难所在地.
+                    </p>
+                    <p>(3)
+                        突破自我,找到那旋律速度的极限.
+                    </p>
+                    <input type="text" placeholder="输入密钥" id="password-image2">
+                    <button onclick="unlockImage('image2')">解锁</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="image-wrapper" id="image4">
+            <img src="" alt="图片4" class="middle-image grayscale" onclick="toggleOverlay('image4')">
+            <div class="overlay">
+                <p>恭喜你完成了所有的解谜！</p>
+            </div>
+        </div>
+
+        <div class="right-group">
+            <div class="image-wrapper" id="image6">
+                <img src="img/R1.png" alt="图片6" class="side-image grayscale" onclick="toggleOverlay('image6')">
+                <div class="overlay">
+                    <p>镌刻法则:
+                        •一缕和谐的光芒,正与那音乐纷争交错的失落世界中等候着你.
+                        tsoqalvmuyc
+                        那天,腥红色的血月升起,为这片大地笼罩上了诡异的色彩.它改变了大家,改变了世界.
+                    </p>
+                    <p>(1)
+                        •花束落下,璀璨的蓝宝石闪闪发光,那是独属于她的加冕礼
+                        •她露出了洁白的手臂,原本的些小亮光化为大量繁星,哭泣的左眼变得红润
+                        •摘下那顶帽子,紫色的长裙在微风中摆动,故事的结局由此改写.
+                        •六芒星是他们准确无误的和.
+                    </p>
+                    <p>(2)
+                        月满之时,她们的强大到达了顶点.
+                        "0"=48
+                        <F S O>
+                        •六芒星+59 g "7"
+                        •s 六芒星+49 K
+                        找到她们的小家.
+                    </p>
+                    <p>(3)
+                        找到那个小家故事开始的那天,让悲剧不再发生,归为是与否的终止.
+                        找到那把钥匙,时空流转,镌刻法则破碎,她所在的地方,在你的下一个目的地.找到她,念出她所站立的地方.
+                    </p>
+                    <h6>注：若有单词开头请大写</h6>
+                    <input type="text" placeholder="输入密钥" id="password-image6">
+                    <button onclick="unlockImage('image6')">解锁</button>
+                </div>
+            </div>
+            <div class="image-wrapper" id="image7">
+                <img src="img/R2.jpeg" alt="图片7" class="side-image grayscale" onclick="toggleOverlay('image7')">
+                <div class="overlay">
+                    <p>镌刻法则:
+                        •棋盘上的交锋,永夜城的黎明,穿过迷宫,光与暗交织在故事的始与末.
+                    </p>
+                    <p>(1)
+                        •特殊的箱庭轮回,找到为她铺展画卷的人.带着那个人回到上一层的时空,在回忆档案馆里找到那个人的<2 16 13>.
+                        •带着那个人的(<2 16 13>+17)前往迷宫找到影子.
+                    </p>
+                    <p>(2)
+                        影子左边刻着谜题:
+                        Purple+Green-Orange=x
+                        x++
+                    </p>
+                    <p>(3)
+                        在CPx中的red里,你会找到突破时空的答案.
+                    </p>
+                    <input type="text" placeholder="输入密钥" id="password-image7">
+                    <button onclick="unlockImage('image7')">解锁</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="image-wrapper" id="image5">
+            <img src="img/R3.jpeg" alt="图片5" class="middle-image grayscale" onclick="toggleOverlay('image5')">
+            <div class="overlay">
+                <p>镌刻法则:
+                    •往事重现,一群少女在跑道上披荆斩棘,冲向故事的彼岸.
+                </p>
+                <p>(1)
+                    她,
+                    •曲折的命运重演,黑白相间的字幕预示着命运的终结.
+                    •从拉可弥拉的序列开始衰减,直到1为尽头.
+                    •穿透时空的人声,被历史铭记.
+                </p>
+                <p>(2)
+                    她蒙上历史的尘埃,却有新生为他致敬
+                    •BOF:14 20
+                    找到为他致敬的新生.
+                </p>
+                <p>(3)
+                    •隐藏于幽冥之中的难度乍现,念出它的名字,便可破除时空障碍.
+                </p>
+                <input type="text" placeholder="输入密钥" id="password-image5">
+                <button onclick="unlockImage('image5')">解锁</button>
+            </div>
+        </div>
     </div>
-    <!-- 谜题2：古木的精灵 -->
-    <div class="puzzle">
-        <h2>谜题2：古木的精灵</h2>
-        <p>古木的精灵栖息于此，倾听着岁月的叹息。树的年轮数是100，精灵的低语是“时间”，岁月的流逝是“永恒”。</p>
-        <p class="clue">线索：年轮数、低语、流逝。</p>
-    </div>
-    <!-- 谜题3：勇者之路 -->
-    <div class="puzzle">
-        <h2>谜题3：勇者之路</h2>
-        <p>有一群人将勇者之路上书写奇迹。勇者的旅程是7步，奇迹的发生是“希望”，书写的方式是“字母”。</p>
-        <p class="clue">线索：旅程步数、奇迹、书写方式。</p>
-    </div>
-    <!-- 谜题4：生命的摇篮 -->
-    <div class="puzzle">
-        <h2>谜题4：生命的摇篮</h2>
-        <p></p>
-        <p class="clue">线索：角色名、曲目名。</p>
-    </div>
-    <!-- 谜题5：白马 -->
-    <div class="puzzle">
-        <h2>谜题5：白马</h2>
-        <p></p>
-        <p class="clue">线索：曲目名、难度。</p>
-    </div>
-    <!-- 谜题6：永夜城 -->
-    <div class="puzzle">
-        <h2>谜题6：永夜城</h2>
-        <p></p>
-        <p class="clue">线索：曲目名、场景。</p>
-    </div>
-    <!-- 谜题7：布若 -->
-    <div class="puzzle">
-        <h2>谜题7：布若</h2>
-        <p></p>
-        <p class="clue">线索：角色名、曲目名。</p>
-    </div>
-    <!-- 谜题8：雨滴的节奏 
-    <div class="puzzle">
-        <h2>谜题8：雨滴的节奏</h2>
-        <p>雨滴的节奏是4/4拍，雨声的频率是440Hz，雨中的旋律是“Rainy Night”。</p>
-        <p class="clue">线索：节奏、频率、曲目名。</p>
-    </div>
-    谜题9：岁月的年轮
-    <div class="puzzle">
-        <h2></h2>
-        <p></p>
-        <p class="clue"></p>
-    </div>
-    <div class="final-answer">
-        <p><strong></strong></p>
-    </div>
-    -->
+
+    <script>
+        function encrypt(text, key) {
+            let result = [];
+            for (let i = 0; i < text.length; i++) {
+                result.push(text.charCodeAt(i) ^ key);
+            }
+            return result.join(",");
+        }
+
+        function decrypt(encryptedText, key) {
+            const encryptedArray = encryptedText.split(",").map(Number);
+            let result = "";
+            for (let i = 0; i < encryptedArray.length; i++) {
+                result += String.fromCharCode(encryptedArray[i] ^ key);
+            }
+            return result;
+        }
+
+        const keyPart1Encrypted = encrypt("Cereris", 2);
+        const keyPart2Encrypted = encrypt("500", 3);
+        const keyPart3Encrypted = encrypt("IVY", 4);
+        const keyPart5Encrypted = encrypt("11+", 4);
+        const keyPart6Encrypted = encrypt("Chess", 4);
+        const keyPart7Encrypted = encrypt("夜幕下的守护者", 5);
+
+        const encryptedKeys = {
+            image1: keyPart1Encrypted,
+            image2: keyPart2Encrypted,
+            image3: keyPart3Encrypted,
+            image5: keyPart5Encrypted,
+            image6: keyPart6Encrypted,
+            image7: keyPart7Encrypted,
+            image4: encrypt("000", 1)
+        };
+
+        const decryptKeys = {
+            image1: 2,
+            image2: 3,
+            image3: 4,
+            image5: 4,
+            image6: 4,
+            image7: 5,
+            image4: 1
+        };
+
+        const unlockOrder = ['image1', 'image2', 'image3', 'image5', 'image6', 'image7', 'image4'];
+        let currentStep = 0;
+
+        function toggleOverlay(imageId) {
+            const wrapper = document.getElementById(imageId);
+
+            if (wrapper.classList.contains('unlocked') || unlockOrder[currentStep] === imageId) {
+                wrapper.classList.toggle('active');
+                if (wrapper.classList.contains('active')) {
+                    const input = wrapper.querySelector('input');
+                    input && input.focus();
+                }
+            } else {
+                alert(`请先解锁图像：${unlockOrder[currentStep]}`);
+            }
+        }
+
+        function unlockImage(imageId) {
+            const input = document.getElementById(`password-${imageId}`);
+            const enteredKey = input.value;
+            const encryptedCorrectKey = encryptedKeys[imageId];
+            const decryptionKey = decryptKeys[imageId];
+            const correctKey = decrypt(encryptedCorrectKey, decryptionKey);
+
+            if (imageId === unlockOrder[currentStep]) {
+              if (enteredKey === correctKey) {
+                    const wrapper = document.getElementById(imageId);
+                    wrapper.classList.add('unlocked');
+                    wrapper.classList.remove('active');
+                    currentStep++;
+                    alert("密钥正确，成功解锁！");
+                    updateImageStates();
+                } else {
+                    alert('密钥错误！');
+                    input.value = '';
+                }
+            } else {
+                const nextImageId = unlockOrder[currentStep];
+                alert(`请按顺序解锁图片，当前应解锁: ${nextImageId ? nextImageId : '无'}`);
+            }
+        }
+
+        function updateImageStates() {
+            unlockOrder.forEach((imageId, index) => {
+                const imageWrapper = document.getElementById(imageId);
+                const image = imageWrapper.querySelector('img');
+                if (index < currentStep) {
+                    image.classList.remove('grayscale');
+                } else {
+                    image.classList.add('grayscale');
+                }
+            });
+        }
+
+        updateImageStates();
+
+    </script>
+
 </body>
 </html>
