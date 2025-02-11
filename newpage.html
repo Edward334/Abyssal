@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最终页</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        input[type="text"] {
+            background-color: black;
+            color: white;
+            border: 1px solid white;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>真正的谱师:flowers</h1>
+    <input type="text" placeholder="输入密钥" id="final-password" type="text">
+    <button onclick="checkFinalPassword()">验证密钥</button> <br><br>
+    <div id="final-message" style="visibility: hidden;">
+        <p>恭喜你，密钥正确！</p>
+        <p>这就是解谜的结尾了，感谢你能玩到这</p>
+        <!-- 这里可以添加更多解锁最终内容的代码 -->
+    </div>
+
+    <script src="newpage.js"></script>
+</body>
+</html>

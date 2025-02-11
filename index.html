@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abyssal Puzzle 2！</title>
+    <title>我的网页</title>
     <style>
         body {
             background-color: black;
@@ -92,7 +92,7 @@
 
     <div class="container">
         <div class="image-wrapper" id="image1">
-            <img src="L1.png" alt="图片1" class="middle-image grayscale" onclick="toggleOverlay('image1')">
+            <img src="img/L1.png" alt="图片1" class="middle-image grayscale" onclick="toggleOverlay('image1')">
             <div class="overlay">
                 <p>镌刻法则:
                     •像素塔不断崩溃,两人手牵手走向最终的结局.
@@ -108,14 +108,14 @@
                     找到她所在的位置,向下走一层,进入那一层所代表的章节,寻找前往上方其他章节的隐藏入口,入口的那段旋律便为答案.
                 </p>
                 <h6>注：如果有单词的话首字母请大写</h6>
-                <input type="text" placeholder="输入密钥" id="password-image1">
+                <input type="text" placeholder="输入密钥" id="password-image1" type="text">
                 <button onclick="unlockImage('image1')">解锁</button>
             </div>
         </div>
 
         <div class="left-group">
             <div class="image-wrapper" id="image3">
-                <img src="L3.png" alt="图片3" class="side-image grayscale" onclick="toggleOverlay('image3')">
+                <img src="img/L3.png" alt="图片3" class="side-image grayscale" onclick="toggleOverlay('image3')">
                 <div class="overlay">
                     <p>镌刻法则:
                         •倾盆大雨落下,淋到雨的人们再也没有醒来.雨丝串联起来的不只是事物,更是情感.
@@ -130,12 +130,12 @@
                         Inverted World.
                     </p>
                     <h6>注：若有字母请大写</h6>
-                    <input type="text" placeholder="输入密钥" id="password-image3">
+                    <input type="text" placeholder="输入密钥" id="password-image3" type="text">
                     <button onclick="unlockImage('image3')">解锁</button>
                 </div>
             </div>
             <div class="image-wrapper" id="image2">
-                <img src="L2.jpeg" alt="图片2" class="side-image grayscale" onclick="toggleOverlay('image2')">
+                <img src="img/L2.jpeg" alt="图片2" class="side-image grayscale" onclick="toggleOverlay('image2')">
                 <div class="overlay">
                     <p>镌刻法则:
                         一切的开端,是如此悄无声息
@@ -153,7 +153,7 @@
                     <p>(3)
                         突破自我,找到那旋律速度的极限.
                     </p>
-                    <input type="text" placeholder="输入密钥" id="password-image2">
+                    <input type="text" placeholder="输入密钥" id="password-image2" type="text">
                     <button onclick="unlockImage('image2')">解锁</button>
                 </div>
             </div>
@@ -162,13 +162,32 @@
         <div class="image-wrapper" id="image4">
             <img src="" alt="图片4" class="middle-image grayscale" onclick="toggleOverlay('image4')">
             <div class="overlay">
-                <p>恭喜你完成了所有的解谜！</p>
+                <p>镌刻法则:
+                    •你所仰仗的一切,都将灰飞烟灭.这一点,|绝对|无误.
+                </p>
+                <p>[旋律]Meta核心:
+                    曲师:(1)
+                    难度:(2)
+                    谱师:?
+                    音乐游戏:(3)
+                </p>
+                <p>(1)
+                    蝴蝶之梦,寻找破茧的回忆.
+                </p>
+                <p>(2)
+                    Time:古往今来,而今而后,亘古不变,时间,超乎你的想象....
+                    Answer=[Time]-20
+                </p>
+                <p>(3)
+                    一切旋律的瑕疵都将会被它所修复.他就是属于律动星所有人的异想之物.
+                <input type="text" placeholder="输入密钥" id="password-image4" type="text">
+                <button onclick="unlockImage('image4')">解锁</button>
             </div>
         </div>
 
         <div class="right-group">
             <div class="image-wrapper" id="image6">
-                <img src="R1.png" alt="图片6" class="side-image grayscale" onclick="toggleOverlay('image6')">
+                <img src="img/R1.png" alt="图片6" class="side-image grayscale" onclick="toggleOverlay('image6')">
                 <div class="overlay">
                     <p>镌刻法则:
                         •一缕和谐的光芒,正与那音乐纷争交错的失落世界中等候着你.
@@ -194,12 +213,12 @@
                         找到那把钥匙,时空流转,镌刻法则破碎,她所在的地方,在你的下一个目的地.找到她,念出她所站立的地方.
                     </p>
                     <h6>注：若有单词开头请大写</h6>
-                    <input type="text" placeholder="输入密钥" id="password-image6">
+                    <input type="text" placeholder="输入密钥" id="password-image6" type="text">
                     <button onclick="unlockImage('image6')">解锁</button>
                 </div>
             </div>
             <div class="image-wrapper" id="image7">
-                <img src="R2.jpeg" alt="图片7" class="side-image grayscale" onclick="toggleOverlay('image7')">
+                <img src="img/R2.jpeg" alt="图片7" class="side-image grayscale" onclick="toggleOverlay('image7')">
                 <div class="overlay">
                     <p>镌刻法则:
                         •棋盘上的交锋,永夜城的黎明,穿过迷宫,光与暗交织在故事的始与末.
@@ -216,14 +235,14 @@
                     <p>(3)
                         在CPx中的red里,你会找到突破时空的答案.
                     </p>
-                    <input type="text" placeholder="输入密钥" id="password-image7">
+                    <input type="text" placeholder="输入密钥" id="password-image7" type="text">
                     <button onclick="unlockImage('image7')">解锁</button>
                 </div>
             </div>
         </div>
 
         <div class="image-wrapper" id="image5">
-            <img src="R3.jpeg" alt="图片5" class="middle-image grayscale" onclick="toggleOverlay('image5')">
+            <img src="img/R3.jpeg" alt="图片5" class="middle-image grayscale" onclick="toggleOverlay('image5')">
             <div class="overlay">
                 <p>镌刻法则:
                     •往事重现,一群少女在跑道上披荆斩棘,冲向故事的彼岸.
@@ -242,114 +261,86 @@
                 <p>(3)
                     •隐藏于幽冥之中的难度乍现,念出它的名字,便可破除时空障碍.
                 </p>
-                <input type="text" placeholder="输入密钥" id="password-image5">
+                <input type="text" placeholder="输入密钥" id="password-image5" type="text">
                 <button onclick="unlockImage('image5')">解锁</button>
             </div>
         </div>
     </div>
 
     <script>
-        function encrypt(text, key) {
-            let result = [];
-            for (let i = 0; i < text.length; i++) {
-                result.push(text.charCodeAt(i) ^ key);
-            }
-            return result.join(",");
-        }
+        let encryptedKeysData; // 声明变量，用于存储从 JSON 文件加载的密钥
 
-        function decrypt(encryptedText, key) {
-            const encryptedArray = encryptedText.split(",").map(Number);
-            let result = "";
-            for (let i = 0; i < encryptedArray.length; i++) {
-                result += String.fromCharCode(encryptedArray[i] ^ key);
-            }
-            return result;
-        }
+        fetch('keys.json') // 加载 keys.json 文件
+            .then(response => response.json()) // 将响应解析为 JSON
+            .then(data => {
+                encryptedKeysData = data.imageKeys; // 将解析后的 JSON 数据赋值给 encryptedKeysData
+                init(); // 在密钥加载完成后，再初始化页面逻辑
+            })
+            .catch(error => console.error('加载 keys.json 出错:', error)); // 错误处理
 
-        const keyPart1Encrypted = encrypt("Cereris", 2);
-        const keyPart2Encrypted = encrypt("500", 3);
-        const keyPart3Encrypted = encrypt("IVY", 4);
-        const keyPart5Encrypted = encrypt("11+", 4);
-        const keyPart6Encrypted = encrypt("Chess", 4);
-        const keyPart7Encrypted = encrypt("夜幕下的守护者", 5);
+        function init() { // 初始化函数，在密钥加载完成后调用
+            const unlockOrder = ['image1', 'image2', 'image3', 'image5', 'image6', 'image7', 'image4'];
+            let currentStep = 0;
 
-        const encryptedKeys = {
-            image1: keyPart1Encrypted,
-            image2: keyPart2Encrypted,
-            image3: keyPart3Encrypted,
-            image5: keyPart5Encrypted,
-            image6: keyPart6Encrypted,
-            image7: keyPart7Encrypted,
-            image4: encrypt("000", 1)
-        };
+            function toggleOverlay(imageId) {
+                const wrapper = document.getElementById(imageId);
 
-        const decryptKeys = {
-            image1: 2,
-            image2: 3,
-            image3: 4,
-            image5: 4,
-            image6: 4,
-            image7: 5,
-            image4: 1
-        };
-
-        const unlockOrder = ['image1', 'image2', 'image3', 'image5', 'image6', 'image7', 'image4'];
-        let currentStep = 0;
-
-        function toggleOverlay(imageId) {
-            const wrapper = document.getElementById(imageId);
-
-            if (wrapper.classList.contains('unlocked') || unlockOrder[currentStep] === imageId) {
-                wrapper.classList.toggle('active');
-                if (wrapper.classList.contains('active')) {
-                    const input = wrapper.querySelector('input');
-                    input && input.focus();
-                }
-            } else {
-                alert(`请先解锁图像：${unlockOrder[currentStep]}`);
-            }
-        }
-
-        function unlockImage(imageId) {
-            const input = document.getElementById(`password-${imageId}`);
-            const enteredKey = input.value;
-            const encryptedCorrectKey = encryptedKeys[imageId];
-            const decryptionKey = decryptKeys[imageId];
-            const correctKey = decrypt(encryptedCorrectKey, decryptionKey);
-
-            if (imageId === unlockOrder[currentStep]) {
-              if (enteredKey === correctKey) {
-                    const wrapper = document.getElementById(imageId);
-                    wrapper.classList.add('unlocked');
-                    wrapper.classList.remove('active');
-                    currentStep++;
-                    alert("密钥正确，成功解锁！");
-                    updateImageStates();
+                if (wrapper.classList.contains('unlocked') || unlockOrder[currentStep] === imageId) {
+                    wrapper.classList.toggle('active');
+                    if (wrapper.classList.contains('active')) {
+                        const input = wrapper.querySelector('input');
+                        input && input.focus();
+                    }
                 } else {
-                    alert('密钥错误！');
-                    input.value = '';
+                    alert(`请先解锁图像：${unlockOrder[currentStep]}`);
                 }
-            } else {
-                const nextImageId = unlockOrder[currentStep];
-                alert(`请按顺序解锁图片，当前应解锁: ${nextImageId ? nextImageId : '无'}`);
             }
-        }
 
-        function updateImageStates() {
-            unlockOrder.forEach((imageId, index) => {
-                const imageWrapper = document.getElementById(imageId);
-                const image = imageWrapper.querySelector('img');
-                if (index < currentStep) {
-                    image.classList.remove('grayscale');
+            function unlockImage(imageId) {
+                const input = document.getElementById(`password-${imageId}`);
+                const enteredKey = input.value;
+                const correctKey = encryptedKeysData[imageId]; // 从加载的 JSON 数据中获取密钥
+
+                if (imageId === unlockOrder[currentStep]) {
+                  if (enteredKey === correctKey) {
+                        const wrapper = document.getElementById(imageId);
+                        wrapper.classList.add('unlocked');
+                        wrapper.classList.remove('active');
+                        currentStep++;
+                        alert("密钥正确，成功解锁！");
+                        updateImageStates();
+                        if (imageId === 'image4') {
+                            window.location.href = 'newpage.html';
+                        }
+                    } else {
+                        alert('密钥错误！');
+                        input.value = '';
+                    }
                 } else {
-                    image.classList.add('grayscale');
+                    const nextImageId = unlockOrder[currentStep];
+                    alert(`请按顺序解锁图片，当前应解锁: ${nextImageId ? nextImageId : '无'}`);
                 }
-            });
-        }
+            }
 
-        updateImageStates();
+            function updateImageStates() {
+                unlockOrder.forEach((imageId, index) => {
+                    const imageWrapper = document.getElementById(imageId);
+                    const image = imageWrapper.querySelector('img');
+                    if (index < currentStep) {
+                        image.classList.remove('grayscale');
+                    } else {
+                        image.classList.add('grayscale');
+                    }
+                });
+            }
+
+            updateImageStates();
+
+            // 绑定 toggleOverlay 和 unlockImage 函数到全局作用域，以便在 HTML 中 onclick 调用
+            window.toggleOverlay = toggleOverlay;
+            window.unlockImage = unlockImage;
+        }
 
     </script>
-
 </body>
 </html>
